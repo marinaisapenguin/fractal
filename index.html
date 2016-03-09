@@ -23,6 +23,8 @@
       (function(){
         var canvasEl = document.getElementById("canvas");
 
+
+
         console.log(window.innerWidth);
         console.log(window.innerHeight);
 
@@ -42,6 +44,8 @@
 
         var ctx = canvasEl.getContext("2d");
         new mandelbrotFractal.Fractal(
+          canvasEl,
+          ctx,
           canvasEl.width,
           canvasEl.height
         ).start(ctx);
