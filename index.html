@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mandelbrot Fractal</title>
+    <style media="screen">
+      body {
+        margin: 0;
+      }
+/*
+      #canvas {
+        border: 1px black solid;
+      }*/
+
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+
+    <script type="text/javascript" src="lib/fractal.js"></script>
+
+    <script type="text/javascript">
+      (function(){
+        var canvasEl = document.getElementById("canvas");
+
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+
+        var width = window.innerWidth * devicePixelRatio;
+        var height = window.innerHeight * devicePixelRatio;
+
+
+        var w = width / devicePixelRatio;
+        var h = height / devicePixelRatio;
+        document.getElementById("canvas").setAttribute(
+          "style", "width: " + w + "px; height: " + h + "px;"
+        )
+
+        canvasEl.height = height;
+        canvasEl.width = width;
+
+        var ctx = canvasEl.getContext("2d");
+        new mandelbrotFractal.Fractal(
+          canvasEl.width,
+          canvasEl.height
+        ).start(ctx);
+      })();
+    </script>
+
+  </body>
+</html>
