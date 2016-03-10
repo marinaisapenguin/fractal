@@ -7,42 +7,73 @@
       body {
         margin: 0;
       }
-/*
-      #canvas {
-        border: 1px black solid;
-      }*/
+
+      #fractal-graphics {
+        /*border: 1px black solid;*/
+        display: none;
+        margin: none;
+      }
 
     </style>
   </head>
   <body>
-    <canvas id="canvas"></canvas>
+    <div id="fractal-graphics">
+      <canvas id="fractal"></canvas>
+      <canvas id="zoom-box"></canvas>
+    </div>
+
+    <div id="launch">Launch fractal</div>
 
     <script type="text/javascript" src="lib/fractal.js"></script>
 
     <script type="text/javascript">
       (function(){
-        var canvasEl = document.getElementById("canvas");
 
+        // console.log(window.innerWidth);
+        // console.log(window.innerHeight);
 
-
-        console.log(window.innerWidth);
-        console.log(window.innerHeight);
-
-        var width = window.innerWidth * devicePixelRatio;
-        var height = window.innerHeight * devicePixelRatio;
+        // var width = window.innerWidth * devicePixelRatio;
+        // var height = window.innerHeight * devicePixelRatio;
+        // var width = window.innerWidth;
+        // var height = window.innerHeight;
         // width = 76;
         // height = 76;
 
-        var w = width / devicePixelRatio;
-        var h = height / devicePixelRatio;
-        document.getElementById("canvas").setAttribute(
-          "style", "width: " + w + "px; height: " + h + "px;"
+        // var w = width / devicePixelRatio;
+        // var h = height / devicePixelRatio;
+
+
+        var launcher = document.getElementById("launch");
+
+        var fractalGraphics = document.getElementById("fractal-graphics");
+        var fractal = document.getElementById("fractal");
+
+        document.getElementById("launch").addEventListener("click", function(event){
+          // launcher.style.display = "none";
+          fractalGraphics.style.display = "block";
+          fractal.webkitRequestFullScreen();
+        })
+
+        document.addEventListener("webkitfullscreenchange", function(){
+          if (!document.webkitIsFullScreen) {
+            fractalGraphics.style.display = "none"
+          }
+        });
+
+        var screenW = window.screen.width;
+        var screenH = window.screen.height;
+
+        var width = screenW * window.devicePixelRatio;
+        var height = screenH * window.devicePixelRatio;
+        document.getElementById("fractal").setAttribute(
+          "style", "width: " + screenW + "px; height: " + screenH + "px;"
         )
 
-        canvasEl.height = height;
-        canvasEl.width = width;
-
+        var canvasEl = document.getElementById("fractal");
         var ctx = canvasEl.getContext("2d");
+        canvasEl.width = width;
+        canvasEl.height = height;
+
         new mandelbrotFractal.Fractal(
           canvasEl,
           ctx,
@@ -54,3 +85,5 @@
 
   </body>
 </html>
+
+<!-- d.addEventListener("click", d.webkitRequestFullScreen) -->
