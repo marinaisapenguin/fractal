@@ -4,8 +4,14 @@
     <meta charset="utf-8">
     <title>Mandelbrot Fractal</title>
     <style media="screen">
-      body {
+      * {
+        font-family: Verdana, sans-serif;
         margin: 0;
+      }
+
+
+      body {
+      	background: #d0d0d0;
       }
 
       #fractal-graphics {
@@ -14,15 +20,70 @@
         margin: none;
       }
 
+      h1 {
+        font-weight: normal;
+        font-size: 1.5em;
+      }
+      #launch {
+        font-size: 1em;
+        position: fixed;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      #launch:hover #launch-text {
+        color: #339900;
+      }
+
+      a:hover {
+        /*background-color: #404040;*/
+      }
+
+      #large-fractal {
+        font-size: .75em;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 1vh;
+        padding-right: 1vw;
+      }
+
+      #large-fractal:hover {
+        color: #339900;
+      }
+
+      a {
+        cursor: pointer;
+      }
+
     </style>
   </head>
   <body>
+    <main>
+      <a id="launch">
+        <h1>The Mandelbrot Fractal</h1>
+        <div class="instructions">click to zoom in</div>
+        <div class="instructions">option-click to zoom out</div>
+        <div id="launch-text">launch fractal</div>
+      </a>
+      <div>
+        code and color algorithm by rafrex
+      </div>
+    </main>
+
+    <a id="large-fractal">
+      launch 1,793 escape time fractal - warning, slow!!!
+    </a>
+
+
     <div id="fractal-graphics">
       <canvas id="fractal"></canvas>
       <canvas id="zoom-box"></canvas>
     </div>
 
-    <div id="launch">Launch fractal</div>
 
     <script type="text/javascript" src="lib/fractal.js"></script>
 
