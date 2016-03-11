@@ -5,13 +5,26 @@
     <title>Mandelbrot Fractal</title>
     <style media="screen">
       * {
-        font-family: Verdana, sans-serif;
+        /*font-family: Verdana, sans-serif;*/
+        font-family: "Helvetica Neue";
+        letter-spacing: 0.01em;
+        font-weight: 300;
         margin: 0;
       }
 
 
       body {
-      	background: #d0d0d0;
+      	/*background: #d0d0d0;*/
+        background: #c0c0c0;
+
+
+
+        /*background-image: url(./c0-green.jpg);
+        background-size: 100vw;
+        background-repeat: no-repeat;
+        /*background-position: 0;*/
+        /*background-position: center, center;*/*/
+
       }
 
       #fractal-graphics {
@@ -20,50 +33,96 @@
         margin: none;
       }
 
-      h1 {
-        font-weight: normal;
-        font-size: 1.5em;
-        padding-bottom: 0.3em;
-      }
+
       main {
-        font-size: 1em;
+        font-size: 2vw;
         position: fixed;
         left: 50%;
-        top: 40%;
+        top: 48%;
         transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
         text-align: center;
-        padding: 4vmin;
-        border-radius: 0.1em;
+        padding: 2.7vw;
+        /*border-radius: 0.1em;*/
+        width: 33vw;
+        height: 33vw;
+
+        border-radius: 50%;
+
+
+      }
+
+
+
+
+      #fractal-title {
+        /*font-weight: normal;*/
+        font-size: 2.5vw;
+        padding-top: 4vw;
+        /*padding-top: 1.1em;*/
+
+        /*position: absolute;*/
+        /*margin: auto;*/
+        /*width: 300px;*/
+        /*top: 10%;*/
+        /*text-align: center;*/
+
+
+        /*padding-bottom: 0.3em;*/
       }
 
       #launch{
         display: block;
-        padding-bottom: 2em;
+        height: 100%;
+        /*padding: 2.7vw;*/
 
-      }
+        /*padding-bottom: 4em;*/
+        /*transform: translateY(30%);*/
+        /*top: 30px;*/
 
-      .instructions{
-        line-height: 1.5em;
-        padding: 0.2em;
-        /*color: #a0a0a0;*/
       }
 
       #launch-text{
-        padding: 1em;
+        /*padding: 1em;*/
+        /*padding-top: 3em;*/
+        top: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+
       }
 
       #credit-line {
-        font-size: 0.75em;
+        /*font-size: 0.75em;*/
+        font-size: 1.5vw;
+        position: absolute;
+        bottom: 5vw;
+        transform: translateX(-50%);
+        left: 50%;
+
       }
 
       #launch:hover #launch-text {
         color: #339900;
+        /*font-weight: 400;*/
+        /*transition: 2s;*/
+        transition: 0.2s;
+
       }
 
       main:hover {
-        background-color: #c0c0c0;
+
+        background-color: #b0b0b0;
+        /*background-color: #202020;*/
+        /*color: white;*/
+
+        /*box-sizing: padding-box;*/
+        /*border-radius: 50%;*/
         /*background-color: #b0b0b0;*/
+
+        transition: 0.3s;
 
       }
       a:hover {
@@ -71,12 +130,18 @@
       }
 
       #large-fractal {
-        font-size: .75em;
+        /*font-size: .75em;*/
+        font-size: 1.5vw;
+
         position: fixed;
-        bottom: 0;
+        top: 48%;
         right: 0;
+        /*float: right;*/
         padding-bottom: 1vh;
         padding-right: 1vw;
+        /*text-orientation: sideways;*/
+        -webkit-transform:  translate(42%, -50%) rotate(90deg);
+        /*-webkit-transform: translateY(50%);*/
       }
 
       #large-fractal:hover {
@@ -102,8 +167,15 @@
         color: #339900;
       }
 
-      /* Clearfix */
+      #fractal-background {
+        width: 100vw;
+        position: fixed;
+        top: 48%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+      }
 
+      /* Clearfix */
       .clear-fix:after {
         content: "";
         display: block;
@@ -113,17 +185,21 @@
     </style>
   </head>
   <body>
+    <img src="./clear-green.png" id="fractal-background" />
     <main class="clear-fix">
-      <a id="launch">
-        <h1>The Mandelbrot Fractal</h1>
-        <div class="instructions">
-          <div>click to zoom in</div>
-          <div>option-click to zoom out</div>
-          <div>shift-click to reset</div>
-        </div>
-        <div id="launch-text">launch fractal</div>
-      </a>
-      <div id="credit-line">code and color algorithm by <a class="link" href="#">rafrex</a></div>
+      <!-- <div id="main-content"> -->
+
+        <a id="launch">
+            <div id="fractal-title">Mandelbrot Fractal</div>
+            <!-- <div class="instructions">
+            <div>click to zoom in</div>
+            <div>option-click to zoom out</div>
+            <div>shift-click to reset</div>
+          </div> -->
+          <div id="launch-text">launch fractal</div>
+        </a>
+        <div id="credit-line">code and color algorithm by <a class="link" href="http://rafrex.github.io">rafrex</a></div>
+      <!-- </div> -->
     </main>
 
     <a id="large-fractal">
