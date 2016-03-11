@@ -186,33 +186,23 @@
     </style>
   </head>
   <body>
-    <img src="./clear-green.png" id="fractal-background" />
+    <img src="./clear-green-only-64.png" id="fractal-background" />
     <main class="clear-fix">
-      <!-- <div id="main-content"> -->
-
         <a id="launch">
-            <div id="fractal-title">Mandelbrot Fractal</div>
-            <!-- <div class="instructions">
-            <div>click to zoom in</div>
-            <div>option-click to zoom out</div>
-            <div>shift-click to reset</div>
-          </div> -->
+          <div id="fractal-title">Mandelbrot Fractal</div>
           <div id="launch-text">launch fractal</div>
         </a>
         <div id="credit-line">code and color algorithm by <a class="link" href="http://rafrex.github.io">rafrex</a></div>
-      <!-- </div> -->
     </main>
 
     <a id="large-fractal">
       launch 1,793 escape time fractal - slow!
     </a>
 
-
     <div id="fractal-graphics">
       <canvas id="fractal"></canvas>
       <canvas id="zoom-box"></canvas>
     </div>
-
 
     <script type="text/javascript" src="lib/fractal.js"></script>
 
@@ -239,9 +229,7 @@
         var fractal = document.getElementById("fractal");
         var largeFractal = document.getElementById("large-fractal");
 
-        largeFractal.addEventListener("click", function(){
 
-        })
 
         document.getElementById("launch").addEventListener("click", function(event){
           // launcher.style.display = "none";
@@ -262,6 +250,8 @@
         document.addEventListener("webkitfullscreenchange", function(){
           if (!document.webkitIsFullScreen) {
             fractalGraphics.style.display = "none"
+          } else if (frac.maxEscapeTime === 1793) {
+            frac.draw();
           }
         });
 
@@ -303,17 +293,47 @@
 
         document.getElementById("fractal").addEventListener("click", clickHandler);
 
+        function test(){
+          // console.log("here test");
+          // frac.draw()
+          window.requestAnimationFrame(showFractal)
+        }
+
+        function showFractal(){
+          frac.maxEscapeTime = 1793;
+          frac.draw();
+
+        }
 
         largeFractal.addEventListener("click", function(){
           // console.log(frac);
+          // frac.maxEscapeTime = 1793;
+          //
+          // frac.draw();
+
+          frac.maxEscapeTime = 1793;
           fractalGraphics.style.display = "block";
           fractal.webkitRequestFullScreen();
 
-          setTimeout(function(){
-            frac.maxEscapeTime = 1793;
-            frac.draw();
+          // setTimeout(function(){
+          //   // window.requestAnimationFrame(test)
+          //   frac.draw();
+          //
+          // }, 200)
 
-          }, 60)
+          // setTimeout(function(){
+          //   frac.maxEscapeTime = 1793;
+          //   frac.draw();
+          // }, 0)
+
+
+          // function showFractal(){
+          //   fractalGraphics.style.display = "block";
+          //   // debugger;
+          //   fractal.webkitRequestFullScreen();
+          // }
+          //
+          // window.requestAnimationFrame(showFractal)
 
         })
       })();
