@@ -140,6 +140,7 @@
         padding-bottom: 1vh;
         padding-right: 1vw;
         /*text-orientation: sideways;*/
+        transform: translate(42%, -50%) rotate(90deg);
         -webkit-transform:  translate(42%, -50%) rotate(90deg);
         /*-webkit-transform: translateY(50%);*/
       }
@@ -148,7 +149,7 @@
         color: #339900;
       }
 
-      a {
+      a, #fractal {
         cursor: pointer;
 
       }
@@ -246,7 +247,10 @@
           // launcher.style.display = "none";
 
           fractalGraphics.style.display = "block";
-          fractal.webkitRequestFullScreen();
+
+          fractal.webkitRequestFullScreen && fractal.webkitRequestFullScreen();
+          fractal.mozRequestFullScreen && fractal.mozRequestFullScreen();
+
           if (frac.maxEscapeTime !== 225) {
             setTimeout(function(){
               frac.maxEscapeTime = 225;
