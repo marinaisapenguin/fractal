@@ -1,12 +1,14 @@
 * {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   font-weight: 300;
   margin: 0;
 }
 
 body {
   background: #c0c0c0;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 main {
@@ -96,15 +98,10 @@ main:hover {
   transform: translate(42%, -50%) rotate(90deg);
   -webkit-transform:  translate(42%, -50%) rotate(90deg);
 
-  padding-bottom: 1vh;
-  padding-right: 1vw;
-
+  margin-right: -1vw;
   font-size: 1.5vw;
 }
 
-#launch-detailed-fractal:hover {
-  color: #339900;
-}
 
 a, #fractal-canvas {
   cursor: pointer;
@@ -169,7 +166,6 @@ a:visited {
 }
 
 #loading-frac-text {
-  /*display: block;*/
   position: fixed;
   top: 40%;
   left: 50%;
