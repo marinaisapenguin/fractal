@@ -179,14 +179,10 @@ a:visited {
   border-radius: 1vw;
   white-space: nowrap;
   background-color: rgba(0, 0, 0, 0.7);
-  font-size: 5vw;
+  font-size: 5vmin;
   text-align: center;
 }
 
 #loading-frac-title {
-  font-size: 10vw;
-}
-
-.instructions {
-  font-size: 3vw;
+  font-size: 10vmin;
 }
