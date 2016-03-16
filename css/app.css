@@ -1,0 +1,192 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  margin: 0;
+}
+
+body {
+  background: #c0c0c0;
+}
+
+main {
+  position: fixed;
+  left: 50.2%;
+  top: 48.5%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  font-size: 2vw;
+  text-align: center;
+
+  width: 33vw;
+  height: 33vw;
+  padding:4vw;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+#launch-fractal{
+  display: block;
+  margin: 0 auto;
+
+  width: 100%;
+  height: 100%;
+  padding: 4vw;
+  border-radius: 50%;
+
+  transform: translate(-4vw, -4vw);
+  -webkit-transform: translate(-4vw, -4vw);
+}
+
+/*alternate way to position #launch-fractal with same result*/
+/*#launch-fractal{
+  display: block;
+  position: absolute;
+
+  height: calc(100% - 8vw);
+  width: calc(100% - 8vw);
+  padding: 4vw;
+
+  border-radius: 50%;
+}*/
+
+#fractal-title {
+  font-size: 2.5vw;
+  padding-top: 2.7vw;
+}
+
+#launch-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  font-size: 2.2vw;
+}
+
+#credit-line {
+  display: block;
+  position: absolute;
+  bottom: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5vw;
+}
+
+#credit-line:hover .link {
+    color: #339900;
+}
+
+main:hover {
+  background-color: #b0b0b0;
+  box-shadow: 0 0 1vw rgba(20,60,0,0.4);
+  transition: 0.3s;
+}
+
+#launch-fractal:hover #launch-text {
+  color: #339900;
+  transition: 0.2s;
+}
+
+#launch-detailed-fractal {
+  position: fixed;
+  top: 49%;
+  right: 0;
+  transform: translate(42%, -50%) rotate(90deg);
+  -webkit-transform:  translate(42%, -50%) rotate(90deg);
+
+  padding-bottom: 1vh;
+  padding-right: 1vw;
+
+  font-size: 1.5vw;
+}
+
+#launch-detailed-fractal:hover {
+  color: #339900;
+}
+
+a, #fractal-canvas {
+  cursor: pointer;
+}
+
+a:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000000;
+}
+
+.link:hover {
+  color: #339900;
+}
+
+#fractal-background {
+  position: fixed;
+  width: 100vw;
+
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.clear-fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#fractal-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#fractal-graphics {
+  display: none;
+  margin: none;
+}
+
+#fractal-info {
+  position: fixed;
+  color: white;
+  font-size: 36px;
+}
+
+#loading-fractal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  display: none;
+  width: 400%;
+  height: 400%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+#loading-frac-text {
+  /*display: block;*/
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: #c0c0c0;
+  padding: 1vw 3vw;
+  border-radius: 1vw;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 5vw;
+  text-align: center;
+}
+
+#loading-frac-title {
+  font-size: 10vw;
+}
+
+.instructions {
+  font-size: 3vw;
+}
