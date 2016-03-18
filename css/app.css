@@ -26,6 +26,10 @@ main {
   padding:4vw;
   border-radius: 50%;
   transition: 0.2s;
+
+
+  /*background-color: #b0b0b0;*/
+  /*box-shadow: 0 0 1vw rgba(20,60,0,0.4);*/
 }
 
 #launch-fractal{
@@ -39,6 +43,8 @@ main {
 
   transform: translate(-4vw, -4vw);
   -webkit-transform: translate(-4vw, -4vw);
+
+
 }
 
 /*alternate way to position #launch-fractal with same result*/
@@ -59,6 +65,9 @@ main {
 }
 
 #launch-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -80,15 +89,15 @@ main {
     color: #339900;
 }
 
-main:hover {
+main:hover, .touch main {
   background-color: #b0b0b0;
   box-shadow: 0 0 1vw rgba(20,60,0,0.4);
   transition: 0.3s;
 }
 
 #launch-fractal:hover #launch-text {
-  color: #339900;
   transition: 0.2s;
+  color: #339900;
 }
 
 #launch-detailed-fractal {
@@ -99,9 +108,12 @@ main:hover {
   -webkit-transform:  translate(42%, -50%) rotate(90deg);
 
   margin-right: -1vw;
-  font-size: 1.5vw;
+  font-size: 1.7vw;
 }
 
+.touch #launch-detailed-fractal {
+  font-size: 2.1vw;
+}
 
 a, #fractal-canvas {
   cursor: pointer;
@@ -118,6 +130,10 @@ a:visited {
 
 .link:hover {
   color: #339900;
+}
+
+.link {
+  color: #277500;
 }
 
 #fractal-background {
@@ -138,8 +154,10 @@ a:visited {
 
 #fractal-canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 #fractal-graphics {
@@ -162,7 +180,6 @@ a:visited {
   width: 400%;
   height: 400%;
   background-color: rgba(0, 0, 0, 0.5);
-
 }
 
 #loading-frac-text {
@@ -181,4 +198,49 @@ a:visited {
 
 #loading-frac-title {
   font-size: 10vmin;
+}
+
+@media (orientation: landscape) and (max-width: 650px), (orientation: landscape) and (max-height: 550px), (orientation: portrait) and (max-height: 650px), (orientation: portrait) and (max-width: 550px) {
+
+  #fractal-background {
+    display: none;
+  }
+
+  main {
+    width: 70vmin;
+    height: 70vmin;
+    padding:8vmin;
+    font-size: 4vmin;
+    background-color: #b0b0b0;
+    box-shadow: 0 0 1vw rgba(20,60,0,0.4);
+    transition: 0.3s;
+  }
+
+  #fractal-title {
+    font-size: 5.5vmin;
+    padding-top: 5.4vmin;
+  }
+
+  #launch-text {
+    font-size: 5vmin;
+  }
+
+  #credit-line {
+    font-size: 3.5vmin;
+    bottom: 10vmin;
+  }
+
+  #launch-detailed-fractal, .touch #launch-detailed-fractal {
+    font-size: 3.5vmin;
+    white-space: nowrap;
+    padding-bottom: 1.7vmin;
+
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(0deg);
+    -webkit-transform:  translate(-50%, 0) rotate(0deg);
+  }
+
 }
