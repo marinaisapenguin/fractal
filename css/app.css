@@ -62,6 +62,13 @@ main {
 #fractal-title {
   font-size: 2.5vw;
   padding-top: 2.7vw;
+
+
+  /*this is to avoid having hover of the title's square edges cause hover to
+  be activated on it's parent (launch-fractal), which is a circle*/
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 #launch-text{
