@@ -26,10 +26,6 @@ main {
   padding:4vw;
   border-radius: 50%;
   transition: 0.2s;
-
-
-  /*background-color: #b0b0b0;*/
-  /*box-shadow: 0 0 1vw rgba(20,60,0,0.4);*/
 }
 
 #launch-fractal{
