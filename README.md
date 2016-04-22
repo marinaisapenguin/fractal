@@ -3,17 +3,15 @@
 http://rafrex.github.io/fractal
 
 
-JavaScript app that draws the Mandelbrot fractal and allows you to zoom in and explore the fractal (uses zero libraries).
+JavaScript app that draws the Mandelbrot fractal and allows you to zoom in and explore the fractal (uses zero libraries). Launches in fullscreen mode for maximum impact on desktop, and has a responsive mobile compatible design with a multi-touch interface on mobile devices.
 
 ![fractal-screenshot-from-iphone6-1](./screenshots/fractal-1.jpg)
 
-- Launches in fullscreen mode for maximum impact on desktop, and has a responsive mobile compatible design with a multi-touch interface on mobile devices.
+The coloring algorithm adjusts to the number of colors needed (i.e. the maximum escape time for the Mandelbrot set generation). See below for more info on the coloring algorithm.
 
-- The coloring algorithm adjusts to the number of colors needed (i.e. the maximum escape time for the Mandelbrot set generation). See below for more info on the coloring algorithm.
+By default the maximum escape time is 224, but you can select 448, 896, or 1792 via the higher escape time links on the launch page. Note that if you zoom in on the fractal and exit back to the launch page, and then select a different escape time, it will launch and redraw the fractal in the same place that you had zoomed in on, just with a different maximum escape time (and different coloring).
 
-- By default the maximum escape time is 224, but you can select 448, 896, or 1792 via the higher escape time links on the launch page. Note that if you zoom in on the fractal and exit back to the launch page, and then select a different escape time, it will launch and redraw the fractal in the same place that you had zoomed in on, just with a different maximum escape time (and different coloring).
-
-- The code is split into two independent parts: app.js and fractal.js. The app handles all the setup and user interaction, and communicates these to the fractal using the fractal's api. The fractal just calculates and draws itself based on the settings it receives from the app.
+The code is split into two independent parts: app.js and fractal.js. The app handles all the setup and user interaction, and communicates these to the fractal using the fractal's api. The fractal just calculates and draws itself based on the settings it receives from the app.
 
 
 ### Fractal API
