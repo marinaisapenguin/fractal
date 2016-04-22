@@ -5,6 +5,8 @@ http://rafrex.github.io/fractal
 
 JavaScript app that draws the Mandelbrot fractal and allows you to zoom in and explore the fractal (uses zero libraries).
 
+<img src="./screenshots/fractal-1.jpg" alt="Drawing" width="667px"/>
+
 - Launches in fullscreen mode for maximum impact on desktop, and has a responsive mobile compatible design with a multi-touch interface on mobile devices.
 
 - The coloring algorithm adjusts to the number of colors needed (i.e. the maximum escape time for the Mandelbrot set generation). See below for more info on the coloring algorithm.
@@ -26,7 +28,6 @@ fractal = Fractal.new(fractalCanvasElement);
 // tell the fractal to update itself based on the options sent
 // it will only redraw itself if necessary
 fractal.update(options);
-
 ```
 
 ```js
@@ -99,8 +100,6 @@ var options = {
   distortion: bool // e.g. true
 
 }
-
-
 ```
 
 
