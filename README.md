@@ -5,7 +5,7 @@ http://rafrex.github.io/fractal
 
 JavaScript app that draws the Mandelbrot fractal and allows you to zoom in and explore the fractal (uses zero libraries).
 
-<img src="./screenshots/fractal-1.jpg" alt="Drawing" width="667px"/>
+![fractal-screenshot-from-iphone6-1](./screenshots/fractal-1.jpg)
 
 - Launches in fullscreen mode for maximum impact on desktop, and has a responsive mobile compatible design with a multi-touch interface on mobile devices.
 
@@ -101,6 +101,37 @@ var options = {
 
 }
 ```
+
+
+### Screenshots
+
+Captured on iPhone 6
+
+<img src="./screenshots/fractal-1.jpg" alt="fractal-screenshot-from-iphone6-1" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-2.jpg" alt="fractal-screenshot-from-iphone6-2" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-3.jpg" alt="fractal-screenshot-from-iphone6-3" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-4.jpg" alt="fractal-screenshot-from-iphone6-4" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-5.jpg" alt="fractal-screenshot-from-iphone6-5" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-6.jpg" alt="fractal-screenshot-from-iphone6-6" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-7.jpg" alt="fractal-screenshot-from-iphone6-7" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-8.jpg" alt="fractal-screenshot-from-iphone6-8" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-9.jpg" alt="fractal-screenshot-from-iphone6-9" width="667px"/>
 
 
 ### Coloring algorithm
