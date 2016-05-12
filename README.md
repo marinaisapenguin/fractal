@@ -1,4 +1,4 @@
-## Mandelbrot fractal generator
+# Mandelbrot Fractal Generator
 
 http://fractal.rafrex.com
 
@@ -14,7 +14,7 @@ By default the maximum escape time is 224, but you can select 448, 896, or 1792 
 The code is split into two independent parts: app.js and fractal.js. The app handles all the setup and user interaction, and communicates these to the fractal using the fractal's api. The fractal just calculates and draws itself based on the settings it receives from the app.
 
 
-### Fractal API
+## Fractal API
 
 fractal.js is designed to work independently from app.js and can easily be integrated into any project. It provides an api through its update function, which takes an options object that instructs the fractal how to adjust itself before it re-renders.
 
@@ -101,7 +101,7 @@ var options = {
 ```
 
 
-### Screenshots
+## Screenshots
 
 Captured on iPhone 6
 
@@ -132,7 +132,7 @@ Captured on iPhone 6
 <img src="./screenshots/fractal-9.jpg" alt="fractal-screenshot-from-iphone6-9" width="667px"/>
 
 
-### Coloring algorithm
+## Coloring Algorithm
 Start with 2 of the 3 red, green and blue values fixed at either 0 or 255, then increase the other R, G or B value in a given number of increments based on the number of colors needed, repeat this for seven cases and you get a maximum of 1792 colors (7*256). Note that white repeats 3 times, at the end of cases 2, 4 and 6.
 
 The seven case are:  
