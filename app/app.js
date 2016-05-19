@@ -3,7 +3,7 @@
 
 (function(){
   'use strict';
-  
+
   if (typeof window.mandelbrotFractal === "undefined") {
     window.mandelbrotFractal = {};
   }
@@ -102,15 +102,13 @@
   App.prototype.eventFunctions = {
 
     touchStartFractalCanvas: function(event){
-      // event.preventDefault(); //prevents pinch to zoom
+      // required for 2 finger tap to work on android, prevents pinch to zoom
+      event.preventDefault();
       this.tapPoints += event.changedTouches.length;
     },
 
     touchMoveFractalCanvas: function(event){
-      //reset to allow for 1 and 2 finger move events - e.g. pinch to zoom, scroll
-      //don't reset if > 2 fingers to allow for slight finger moves when taping
-      //3 or 4 fingers, this makes the 3 and 4 finger tap more reliable
-      if (this.tapPoints <= 2) this.tapPoints = 0;
+      event.preventDefault();
     },
 
     touchEndFractalCanvas: function(event){
