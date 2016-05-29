@@ -69,11 +69,14 @@
     <script type="text/javascript" src="app/fractal.js">fractal</script>
     <script type="text/javascript" src="app/app.js">app</script>
     <script type="text/javascript">
-      startApp = function(){
-        window.mandelbrotFractal.runningApp = new mandelbrotFractal.App();
-        document.removeEventListener("DOMContentLoaded", startApp);
-      }
-      document.addEventListener("DOMContentLoaded", startApp);
+      (function() {
+        'use-strict';
+        function startApp(){
+          window.mandelbrotFractal.runningApp = new mandelbrotFractal.App();
+          document.removeEventListener("DOMContentLoaded", startApp);
+        }
+        document.addEventListener("DOMContentLoaded", startApp);
+      }())
     </script>
 
 
