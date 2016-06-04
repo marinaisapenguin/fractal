@@ -180,7 +180,7 @@
     } else {
       var oldCtWidth = ctWidth;
       ctWidth = ctHeight * (pxWidth / pxHeight);
-      var diff = ctWidth - oldCtWidth;
+      diff = ctWidth - oldCtWidth;
       this.cords.xCartMax += (diff / 2);
       this.cords.xCartMin -= (diff / 2);
     }
