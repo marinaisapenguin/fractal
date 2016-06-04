@@ -13,10 +13,11 @@
   function App(){
     this.elements = {};
     this.getElements();
-    this.fractal = new mandelbrotFractal.Fractal(this.elements.fractalCanvas);
+    this.fractal = new window.mandelbrotFractal.Fractal(this.elements.fractalCanvas);
     this.isTouchDevice = this.determineTouch();
     this.fullscreenSupported = this.determineFullscreenSupport();
     this.tapPoints = 0;
+    this.lastTouchStart = null;
     if (this.isTouchDevice) this.setTouchStyle();
     this.addEventListeners();
     this.fractalOptions = {};
@@ -84,16 +85,16 @@
     }
 
     if (document.fullscreenEnabled) {
-        document.addEventListener("fullscreenchange", evFuncs.fullscreenChange.bind(this));
-        //note this might not work in ms edge, which uses "fullscreenChange",
-        //but responds to document.fullscreenEnabled, so add second event listener for now...
-        document.addEventListener("fullscreenChange", evFuncs.fullscreenChange.bind(this));
+      document.addEventListener("fullscreenchange", evFuncs.fullscreenChange.bind(this));
+      //note this might not work in ms edge, which uses "fullscreenChange",
+      //but responds to document.fullscreenEnabled, so add second event listener for now...
+      document.addEventListener("fullscreenChange", evFuncs.fullscreenChange.bind(this));
     } else if (document.webkitFullscreenEnabled) {
-        document.addEventListener("webkitfullscreenchange", evFuncs.fullscreenChange.bind(this));
+      document.addEventListener("webkitfullscreenchange", evFuncs.fullscreenChange.bind(this));
     } else if (document.mozFullScreenEnabled) {
-        document.addEventListener("mozfullscreenchange", evFuncs.fullscreenChange.bind(this));
+      document.addEventListener("mozfullscreenchange", evFuncs.fullscreenChange.bind(this));
     } else if (document.msFullscreenEnabled) {
-        document.addEventListener("MSFullscreenChange", evFuncs.fullscreenChange.bind(this));
+      document.addEventListener("MSFullscreenChange", evFuncs.fullscreenChange.bind(this));
     }
 
   };
@@ -105,6 +106,7 @@
       // required for 2 finger tap to work on android, prevents pinch to zoom
       event.preventDefault();
       this.tapPoints += event.changedTouches.length;
+      this.lastTouchStart = new Date();
     },
 
     touchMoveFractalCanvas: function(event){
@@ -114,7 +116,13 @@
     touchEndFractalCanvas: function(event){
       event.preventDefault();
 
-      switch (this.tapPoints) {
+      // handle state changes first
+      var previousTapPoints = this.tapPoints;
+      this.tapPoints = 0;
+
+      if (new Date() - this.lastTouchStart > 250) return;
+
+      switch (previousTapPoints) {
         case 1:
           this.fractalOptions.zoomInPxPoint = {
             xPx: event.changedTouches[0].pageX * devicePixelRatio,
@@ -137,7 +145,6 @@
           this.hideFractal();
           break;
       }
-      this.tapPoints = 0;
     },
 
     handleDeviceOrientationChange: function(){
@@ -180,8 +187,7 @@
       event.preventDefault();
       var url = this.elements.creditLine.getAttribute("href");
       window.location.href = url;
-    },
-
+    }
   };
 
   App.prototype.updateFractalSize = function(){
@@ -324,26 +330,26 @@
 
   App.prototype.exitFullscreenMode = function(){
     if (document.exitFullscreen) {
-        document.exitFullscreen();
+      document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
+      document.webkitExitFullscreen();
     } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
+      document.mozCancelFullScreen();
     } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
+      document.msExitFullscreen();
     }
   };
 
 
   App.prototype.enterFullscreenMode = function(element){
     if (element.requestFullscreen) {
-        element.requestFullscreen();
+      element.requestFullscreen();
     } else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen();
+      element.webkitRequestFullscreen();
     } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
+      element.mozRequestFullScreen();
     } else if (element.msRequestFullscreen) {
-        element.msRequestFullscreen();
+      element.msRequestFullscreen();
     }
   };
 
