@@ -168,12 +168,6 @@ a:visited {
   margin: none;
 }
 
-#fractal-info {
-  position: fixed;
-  color: white;
-  font-size: 36px;
-}
-
 #loading-fractal {
   position: fixed;
 
