@@ -51,7 +51,6 @@
     els.launch1792Fractal = document.getElementById("1792-escape-time");
     els.fractalGraphics = document.getElementById("fractal-graphics");
     els.fractalCanvas = document.getElementById("fractal-canvas");
-    els.fractalInfo = document.getElementById("fractal-info");
     els.loadingFractal = document.getElementById("loading-fractal");
     els.creditLine = document.getElementById("credit-line");
   };
@@ -142,6 +141,7 @@
           this.updateFractal();
           break;
         case 4:
+          this.exitFullscreenMode();
           this.hideFractal();
           break;
       }
@@ -287,22 +287,16 @@
 
 
   App.prototype.determineTouch = function(){
-    if (
-      'ontouchstart' in window ||
-      window.navigator.maxTouchPoints > 0 ||
-      window.navigator.msMaxTouchPoints > 0
-    ) {
+    if ('ontouchstart' in window) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   };
 
 
   //fullscreen functions:
 
   App.prototype.determineFullscreenSupport = function(){
-    if (this.isTouchDevice) return false;
     if (
       document.fullscreenEnabled ||
       document.webkitFullscreenEnabled ||
