@@ -104,18 +104,18 @@ main {
 }
 
 #credit-line:hover .link {
-    color: #339900;
+    color: #00A000;
 }
 
 main:hover, .touch main {
   background-color: #b0b0b0;
-  box-shadow: 0 0 1vw rgba(20,60,0,0.4);
+  box-shadow: 0 0 1vw rgba(0,60,0,0.4);
   transition: 0.3s;
 }
 
 #launch-fractal:hover #launch-text {
   transition: 0.2s;
-  color: #339900;
+  color: #00A000;
 }
 
 #launch-detailed-fractal {
@@ -147,11 +147,11 @@ a:visited {
 }
 
 .link:hover {
-  color: #339900;
+  color: #00A000;
 }
 
 .link {
-  color: #277500;
+  color: #007800;
 }
 
 #fractal-background {
@@ -224,7 +224,7 @@ a:visited {
     padding:8vmin;
     font-size: 4vmin;
     background-color: #b0b0b0;
-    box-shadow: 0 0 1vw rgba(20,60,0,0.4);
+    box-shadow: 0 0 1vw rgba(0,60,0,0.4);
     transition: 0.3s;
   }
 
