@@ -104,7 +104,7 @@ main {
 }
 
 #credit-line:hover .link {
-    color: #00A000;
+    color: #009800;
 }
 
 main:hover, .touch main {
@@ -115,7 +115,7 @@ main:hover, .touch main {
 
 #launch-fractal:hover #launch-text {
   transition: 0.2s;
-  color: #00A000;
+  color: #009800;
 }
 
 #launch-detailed-fractal {
@@ -147,7 +147,7 @@ a:visited {
 }
 
 .link:hover {
-  color: #00A000;
+  color: #009800;
 }
 
 .link {
