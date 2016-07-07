@@ -14,6 +14,37 @@ By default the maximum escape time is 224, but you can select 448, 896, or 1792 
 The code is split into two independent parts: app.js and fractal.js. The app handles all the setup and user interaction, and communicates these to the fractal using the fractal's api. The fractal just calculates and draws itself based on the settings it receives from the app.
 
 
+## Screenshots
+
+Captured on iPhone 6
+
+<img src="./screenshots/fractal-1.jpg" alt="fractal-screenshot-from-iphone6-1" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-2.jpg" alt="fractal-screenshot-from-iphone6-2" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-3.jpg" alt="fractal-screenshot-from-iphone6-3" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-4.jpg" alt="fractal-screenshot-from-iphone6-4" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-5.jpg" alt="fractal-screenshot-from-iphone6-5" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-6.jpg" alt="fractal-screenshot-from-iphone6-6" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-7.jpg" alt="fractal-screenshot-from-iphone6-7" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-8.jpg" alt="fractal-screenshot-from-iphone6-8" width="667px"/>
+<br><br>
+
+<img src="./screenshots/fractal-9.jpg" alt="fractal-screenshot-from-iphone6-9" width="667px"/>
+
+
 ## Fractal API
 
 fractal.js is designed to work independently from app.js and can easily be integrated into any project. It provides an api through its update function, which takes an options object that instructs the fractal how to adjust itself before it re-renders.
@@ -99,37 +130,6 @@ var options = {
 
 }
 ```
-
-
-## Screenshots
-
-Captured on iPhone 6
-
-<img src="./screenshots/fractal-1.jpg" alt="fractal-screenshot-from-iphone6-1" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-2.jpg" alt="fractal-screenshot-from-iphone6-2" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-3.jpg" alt="fractal-screenshot-from-iphone6-3" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-4.jpg" alt="fractal-screenshot-from-iphone6-4" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-5.jpg" alt="fractal-screenshot-from-iphone6-5" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-6.jpg" alt="fractal-screenshot-from-iphone6-6" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-7.jpg" alt="fractal-screenshot-from-iphone6-7" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-8.jpg" alt="fractal-screenshot-from-iphone6-8" width="667px"/>
-<br><br>
-
-<img src="./screenshots/fractal-9.jpg" alt="fractal-screenshot-from-iphone6-9" width="667px"/>
 
 
 ## Coloring Algorithm
