@@ -52,7 +52,7 @@ fractal.js is designed to work independently from app.js and can easily be integ
 ```js
 // create fractal object, send it an HTML canvas element
 // on which it will draw itself
-fractal = Fractal.new(fractalCanvasElement);
+var fractal = new Fractal(fractalCanvasElement);
 
 // tell the fractal to update itself based on the options sent
 // it will only redraw itself if necessary
