@@ -85,9 +85,6 @@
 
     if (document.fullscreenEnabled) {
       document.addEventListener("fullscreenchange", evFuncs.fullscreenChange.bind(this));
-      //note this might not work in ms edge, which uses "fullscreenChange",
-      //but responds to document.fullscreenEnabled, so add second event listener for now...
-      document.addEventListener("fullscreenChange", evFuncs.fullscreenChange.bind(this));
     } else if (document.webkitFullscreenEnabled) {
       document.addEventListener("webkitfullscreenchange", evFuncs.fullscreenChange.bind(this));
     } else if (document.mozFullScreenEnabled) {
