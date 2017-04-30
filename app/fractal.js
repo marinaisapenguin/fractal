@@ -214,21 +214,22 @@
 
 
   Fractal.prototype.drawToImageData = function(){
-    var imageData = new ImageData(this.canvas.width, this.canvas.height); //OK? new each time? gets garbadge collected?
+    var imageData = new ImageData(this.canvas.width, this.canvas.height);
+    var yCart, xCart, escapeTime, rgbNum, index;
 
     for (var y = 0; y < imageData.height; y++){
-      var yCart = this.pixelToCartY(y);
+      yCart = this.pixelToCartY(y);
 
       for (var x = 0; x < imageData.width; x++){
-        var xCart = this.pixelToCartX(x);
-        var escapeTime = this.calcEscapeTime(xCart, yCart);
+        xCart = this.pixelToCartX(x);
+        escapeTime = this.calcEscapeTime(xCart, yCart);
 
-        var rgbNum = this.rgbNum(escapeTime);
+        rgbNum = this.rgbNum(escapeTime);
 
         // debugging console log
         // console.log(x + ", " + y + " - " + Math.round(xCart * 100) / 100 + ", " + Math.round(yCart * 100) / 100 + " - " + escapeTime + " - " + rgbNum[0] + ", " + rgbNum[1] + ", " + rgbNum[2]);
 
-        var index = (y * imageData.width + x) * 4;
+        index = (y * imageData.width + x) * 4;
         imageData.data[index] = rgbNum[0];
         imageData.data[index + 1] = rgbNum[1];
         imageData.data[index + 2] = rgbNum[2];
